@@ -1,0 +1,25 @@
+Assignment 5
+
+In this assignment you have to program a reaction testing game.
+
+Game description:
+There are 4 LEDs connected to the Arduino. After hitting a start button and followed by a short break to allow the player to get ready, an LED lights up randomly. Only if the player presses the correct and corresponding button, the LED is switched off and after a short break the next (randomly chosen) LED lights up. In total 5 LEDs are chosen randomly before the game round ends. Take the time in milliseconds that a player needs to press the right button and sum this time up. Show the end result on the attached LCD. For example:
+
+	1) player1 presses start button
+	2) int r <= random
+	3) LED(r) lights up
+	4) player1 presses button(w) with w != r
+	5) player1 presses button(r)
+	6) go to 2. (5 times)
+	7) display final time on LCD
+	8) player2 get ready
+	9) go to 1.
+
+Who is the fastest?
+
+Further ideas: If the player hits a wrong button, add some penalty every time.
+
+Hints: 
+	1) Use ISRs for the button presses.
+	2) Use an ISR to count milliseconds.
+	3) Since the buttons on the shield that comes along with your board, are very cheap, it might happen, that they trigger multiple button presses within a very short time. You have to adapt and extend the code to prevent multiple unintentional presses. This method is called "debouncing".
