@@ -1,0 +1,13 @@
+Assignment 7
+
+Description:
+You have to print the values that you read from the LDR and NTC on the console of the host machine (that is your computer). 
+ 
+PART 1: 
+Have a look at the attached uartLibrary.h. 
+This library is a skeleton currently. It is suppose to provide the functions for uart_init(), uart_putchar() and uart_getChar() and it helps you to print out text on a serial terminal such as minicom (Linux) or Hyperterminal (Windows). What the functions are suppose to do, is mentioned in the comments you find above them. It also provides the functionality of taking input from the terminal.
+
+PART 2: 
+If I press a key on the keyboard (e.g. "a"), the Arduino should print out the state of the LEDs immediately (e.g. “LED temp: off, LED light: off”). If I press another key (e.g. “b”) an error message is printed on the console (e.g. “Invalid key pressed, please try again.”). Use an ISR for this functionality, hence you cannot use "input = getchar();". This line is for demonstration purposes only and for the sake of completeness. 
+ 
+

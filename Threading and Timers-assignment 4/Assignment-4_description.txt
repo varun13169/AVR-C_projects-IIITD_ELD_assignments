@@ -1,0 +1,30 @@
+Assignment 4
+
+Threading and Timers in AVR
+
+In this lab assignment you are asked to minimize the usage of functions such as _delay_ms(), _delay_us() and their derivatives with the exception that if you need delays to control the LCD, you can use those functions. Take the LCD code from your source code that you submitted in the previous assignment.
+
+
+Part 1:
+The LCD has 2 lines. To complete this assignment you will have to increment an integer value displayed in the first row of the LCD every second (called thread t1). Another integer value which is displayed in the second row of the LCD, needs to be decremented every 2 seconds (called thread t2). Both integers start from 0.
+
+By definition a thread is a light weight process that is executed independently. Due to the hardware limitations let us incorrectly assume that a thread is simply a function manipulating one of the integers mentioned above. Since Atmega328P is equipped with only one ALU either t1 or t2 is able to run. They can never run at the same time.
+
+Every 5.5 seconds a scheduler switches between the threads.
+
+Example:
+1) t1 is running and increments the integer in the first row every second
+2) After 5.5 seconds, t1 stops and t2 starts decrementing the integer in the second row every 2 seconds
+3) After 5.5 seconds, stop t2, start t1, go back to 1)
+
+Please have a look at the attached timing diagram. Notice that per definition the states of the threads are preserved when they are rescheduled. This means that, if e.g. t1 already waited 500ms before it gets rescheduled by t2 at t=5.5sec. If t1 is back, it waits for another 500ms only (see t=11.5sec) summing up the total waiting time of t1 to 1sec as expected.
+
+
+Part 2:
+Increase the resolution of the scheduler to 250ms i.e. every 250ms the threads are rescheduled. What happens to your program? If it does not work as described in part 1, change it accordingly.
+
+
+Part 3:
+What is the disadvantage of using the _delay_ms() function?
+
+
