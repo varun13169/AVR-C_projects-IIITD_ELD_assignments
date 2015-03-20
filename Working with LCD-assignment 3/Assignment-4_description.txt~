@@ -1,0 +1,3 @@
+Assignment 3
+
+Display your name in the LCD display using the AVR library only. Change your program to drive the LCD in a way so that first your name then your roll number is displayed alternating, i.e. name1 is displayed and after x seconds name2 is shown in a continuous loop.
