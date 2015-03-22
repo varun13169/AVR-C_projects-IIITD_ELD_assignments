@@ -1,0 +1,16 @@
+Installation:
+Install a development environment on your machine (Windows, Linux, Solaris, etc). You need gcc for AVR architectures, downloader, an editor of your choice, etc
+
+
+Assignment 2:
+By using the Arduino library, which provides commands such as pinMode and digitalWrite, make the on board LED blink in intervals of 2 seconds (repeatively 1 second on, 1 second off).
+
+Create a Makefile so that you can compile your code at the command prompt (i.e. without using the buttons in the Arduino IDE). This Makefile has to contain 3 sections at least to separately compile and program your device plus to clean up all created files. Fill these sections with the suitable commands so that someone else can compile the code, upload the hex-file or clean the project by using "make compile", "make download" and "make clean" respectively at the command prompt. If no parameter is given, the code is compiled and the Arduino is programmed. In the Makefile use variables for the compiler executable, source code, port number, directories for libraries and include files, so that an easy change is possible at a single location. This will be useful for later assignments.
+
+Write the same program as in item 1 above. However from now onwards, you have to use the AVR library only. Adapt your Makefile accordingly (better have a second one). Answer the following questions: How do you access the port? How do you configure the ports?
+
+Answer the following questions in your documentation: How does the delay function of the AVR library work? For that you need to have a look at the source code of the AVR library.
+
+What is F_CPU standing for? What value did you set it to and why?
+
+What is the amount of space required in the flash for your programs using the Arduino and the AVR library? What is the program that consumes the least amount of space?
