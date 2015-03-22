@@ -2,6 +2,7 @@ Installation:
 Install a development environment on your machine (Windows, Linux, Solaris, etc). You need gcc for AVR architectures, downloader, an editor of your choice, etc
 
 
+
 Assignment 2:
 By using the Arduino library, which provides commands such as pinMode and digitalWrite, make the on board LED blink in intervals of 2 seconds (repeatively 1 second on, 1 second off).
 
