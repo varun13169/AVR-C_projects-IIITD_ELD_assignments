@@ -5,16 +5,14 @@ pro = -mmcu=atmega328p
 
 .PHONY:all compile download clean
 
-all: $(f).c 
-	$(comp) -g -Os $(pro) -c $(f).c		#makes .o
-	$(comp) -g $(pro) -Wall -Os -o $(f).elf $(f).c		#makes .elf
+all: compile download uartLibrary.h
+	
+compile: $(f).c uartLibrary.h
+	$(comp) -g $(pro) -Wall -Os $(f).c -o $(f).elf		#makes .elf
 	avr-objcopy -j .text -j .data -O ihex $(f).elf $(f).hex		#makes hex
-	sudo avrdude -F  -V -c arduino -p m328  -P $(p) -b 57600 -e -U flash:w:$(f).hex		#uploads the code
-compile: $(f).c
-	$(comp) -g -Os $(pro) -c $(f).c
-	$(comp) -g $(pro) -Wall -Os -o $(f).elf $(f).c 
-	avr-objcopy -j .text -j .data -O ihex $(f).elf $(f).hex
-download:$(f).hex
-	sudo avrdude -F  -V -c arduino -p m328  -P $(p) -b 57600 -e -U flash:w:$(f).hex
+
+download: $(f).hex
+	sudo avrdude -F  -V -c arduino -p m328  -P $(p) -b 57600 -e -U flash:w:$(f).hex  #uploads the code
+
 clean:
-	rm -f $(f).elf $(f).hex	$(f).o
+	rm -f *.elf *.hex *.o
