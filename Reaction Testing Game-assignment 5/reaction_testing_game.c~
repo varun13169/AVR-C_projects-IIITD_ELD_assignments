@@ -114,7 +114,6 @@ void cut(char *str)
 		
 	}	
 }
-
 void Send_An_Integer(int x)
 {
 	char buffer[16];
